@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request
+from flask import Flask, url_for, request, render_template
 
 app = Flask(__name__)
 
@@ -12,17 +12,18 @@ def slash():
 def index():
     return "И на Марсе будут яблони цвести!"
 
+
 @app.route('/promotion')
 def promotion():
     a = ['Человечество вырастает из детства.',
 
-'Человечеству мала одна планета.',
+         'Человечеству мала одна планета.',
 
-'Мы сделаем обитаемыми безжизненные пока планеты.',
+         'Мы сделаем обитаемыми безжизненные пока планеты.',
 
-'И начнем с Марса!',
+         'И начнем с Марса!',
 
-'Присоединяйся!']
+         'Присоединяйся!']
     return '</br>'.join(a)
 
 
@@ -48,8 +49,9 @@ def image_mars():
                   </body>
                 </html>'''
 
-
-
+@app.route('/index1')
+def index1():
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
