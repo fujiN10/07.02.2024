@@ -49,9 +49,15 @@ def image_mars():
                   </body>
                 </html>'''
 
+
 @app.route('/index1')
 def index1():
     return render_template('index.html')
+
+
+@app.route('/training/<prof>')
+def training(prof):
+    return render_template('train.html', prof=prof)
 
 
 if __name__ == '__main__':
