@@ -1,4 +1,5 @@
 from flask import Flask, url_for, request, render_template
+from data import db_session
 
 app = Flask(__name__)
 
@@ -61,4 +62,5 @@ def training(prof):
 
 
 if __name__ == '__main__':
+    db_session.global_init("db/mars_explorer.db")
     app.run(port=8080, host='127.0.0.1')
